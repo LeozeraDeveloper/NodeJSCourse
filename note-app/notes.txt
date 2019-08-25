@@ -1,0 +1,3 @@
+My name is Leonardo Viana.
+And now, I will show you how to programming in JS!
+Dont worry, cause I will be right here helping you! 
