@@ -42,13 +42,23 @@ app.get('/weather', (req, res) => {
         forecast: 'It is snowing',
         location: 'Philadelphia'
     });
-})
+});
 
+app.get('help/*', (req, res) => {
+    res.render('404',{
+        title:'404',
+        name:'Leozera D3v!',
+        errorMessage:'Help article was not found!'
+    });
+});
 
-
-// app.com
-// app.com/help
-// app.com/about
+app.get('*', (req, res) => {
+    res.render('404',{
+        title:'404',
+        name:'Leozera D3v!',
+        errorMessage:'Page was not found!'
+    });
+});
 
 app.listen(3000, () => {
     console.log('Server is up on port 3000.');
