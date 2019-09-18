@@ -38,25 +38,43 @@ app.get('/help', (req, res) => {
 });
 
 app.get('/weather', (req, res) => {
+    if (!req.query.address) {
+        return res.send({
+            error: 'You must provide a address!'
+        })
+    }
     res.send({
         forecast: 'It is snowing',
-        location: 'Philadelphia'
+        location: 'Philadelphia',
+        address: req.query.address
+    });
+});
+
+app.get('/products', (req, res) => {
+    if (!req.query.search) {
+        res.send({
+            error: 'You must provide a search term'
+        });
+    }    
+    console.log(req.query.search);
+    res.send({
+        products: []
     });
 });
 
 app.get('help/*', (req, res) => {
-    res.render('404',{
-        title:'404',
-        name:'Leozera D3v!',
-        errorMessage:'Help article was not found!'
+    res.render('404', {
+        title: '404',
+        name: 'Leozera D3v!',
+        errorMessage: 'Help article was not found!'
     });
 });
 
 app.get('*', (req, res) => {
-    res.render('404',{
-        title:'404',
-        name:'Leozera D3v!',
-        errorMessage:'Page was not found!'
+    res.render('404', {
+        title: '404',
+        name: 'Leozera D3v!',
+        errorMessage: 'Page was not found!'
     });
 });
 
