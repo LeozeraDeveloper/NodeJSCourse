@@ -39,3 +39,17 @@ header a{
     width: 250px;
     border-radius: 5px;
 }
+
+input{
+border:  1px solid #cccccc;
+padding: 8px;
+}
+
+button{
+    cursor: pointer;
+    border: 1px solid #888888;
+    background: #888888;
+    color: #FFF;
+    padding: 8px;
+
+}
